@@ -35,3 +35,6 @@ def twitterTemp(temp, username, password):
     time.sleep(8)
 
     driver.quit()
+
+if __name__ == '__main__':
+	twitterTemp()
