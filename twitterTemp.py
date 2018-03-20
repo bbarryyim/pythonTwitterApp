@@ -21,17 +21,17 @@ def twitterTemp(temp, username, password):
     temp = str(temp)
     print("Entered temp: " + temp)
 
-
-    chrome_options = webdriver.ChromeOptions()
-    driver = webdriver.Chrome(executable_path='/Users/barryyim/Documents/python/chromeDriver/chromedriver', chrome_options=chrome_options)
-    driver.set_window_size(1920, 1080)
-    driver.maximize_window()
-    driver.get('https://twitter.com/login')
-    driver.find_element_by_name('session[username_or_email]').send_keys(username)
+    DesiredCapabilities.PHANTOMJS['phantomjs.page.settings.userAgent'] = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:16.0) Gecko/20121026 Firefox/16.0'
+    driver = webdriver.PhantomJS(executable_path='/Users/devin.mancuso/node_modules/phantomjs/bin/phantomjs')
+    driver.get('https://www.youtube.com/')
+    driver.find_element_by_id('search').send_keys(username)
     time.sleep(8)
-    driver.find_element_by_name('session[password]').send_keys(password)
-    time.sleep(8)
-    driver.find_element_by_class_name('submit EdgeButton EdgeButton--primary EdgeButtom--medium').click()
-    time.sleep(8)
+    #driver.find_element_by_class_name('session[password]').send_keys(password)
+    #time.sleep(8)
+    #driver.find_element_by_class_name('submit EdgeButton EdgeButton--primary EdgeButtom--medium').click()
+    #time.sleep(8)
 
     driver.quit()
+
+if __name__ == '__main__':
+	twitterTemp()
