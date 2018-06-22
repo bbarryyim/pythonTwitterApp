@@ -22,7 +22,7 @@ def twitterTemp(temp, username, password):
     print("Entered temp: " + temp)
 
     DesiredCapabilities.PHANTOMJS['phantomjs.page.settings.userAgent'] = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:16.0) Gecko/20121026 Firefox/16.0'
-     driver = webdriver.PhantomJS(executable_path='/Users/devin.mancuso/node_modules/phantomjs/bin/phantomjs')
+    driver = webdriver.PhantomJS(executable_path='/Users/devin.mancuso/node_modules/phantomjs/bin/phantomjs')
     driver.get('https://www.youtube.com/')
     driver.find_element_by_id('search').send_keys(username)
     time.sleep(8)
